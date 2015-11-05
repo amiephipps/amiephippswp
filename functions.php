@@ -52,7 +52,7 @@ function hackeryou_scripts() {
   	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
   	false, //dependencies
   	null, //version number
-  	true //load in footer
+  	false //load in footer
   );
 
   wp_enqueue_script(
@@ -69,6 +69,30 @@ function hackeryou_scripts() {
     array( 'jquery', 'plugins' ), //dependencies
     null, // version number
     true //load in footer
+  );
+
+  wp_enqueue_script(
+  	'smoothscroll', //handle
+  	get_template_directory_uri() . '/js/smoothScroll.js', //source
+  	array( 'jquery' ), 
+  	null, //version number
+  	true
+  );
+
+  wp_enqueue_script(
+  	'typewriter', //handle
+  	get_template_directory_uri() . '/js/t.js', //source
+  	array( 'jquery' ), 
+  	null, //version number
+  	true
+  );
+
+  wp_enqueue_script(
+  	'modal', //handle
+  	get_template_directory_uri() . '/js/jquery.the-modal.js', //source
+  	array( 'jquery' ), 
+  	null, //version number
+  	true
   );
 }
 
@@ -266,3 +290,5 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+show_admin_bar( false );

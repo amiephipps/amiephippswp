@@ -1,97 +1,58 @@
-a {
-	color: #BA209B;
-	text-decoration: none;
-	&:hover {
-		color: #D424B1;
-	}
+body {
+	font-family: 'Droid Sans', sans-serif;
 }
 
-/* paragraphs */
+h1, h2, h4, h5 {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+	@include fontSize(100);
+	margin: 5% 0;
+}
+
+h2 {
+	@include fontSize(50);
+	margin: 5% 0;
+}
+
+h3 {
+	@include fontSize(40);
+	margin: 3% 0;
+}
+
+h4 {
+	@include fontSize(35);
+	margin: 3%;
+	padding-bottom: 3%;
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+
+h5 {
+	@include fontSize(18);
+	// margin: 2%;
+}
 
 p {
-	line-height: 1.5;
+	@include fontSize(16);
+	line-height: 2;
 }
 
-/*blockquotes*/
+a {
+	text-decoration: none;
+}
 
-blockquote {
-	background: #F7F7F7;
+main a {
+	color: black;
+}
+
+header a {
+	color: white;
+}
+
+ul {
 	margin: 0;
-	padding: 20px;
-	p {
-		margin-top: 0;
-	}
-}
-
-/*tables*/
-
-table {
-	td {
-		padding: 10px;
-	}
-	tr td:first {
-		padding-right: 0;
-	}
-}
-
-/*def lists*/
-
-dt {
-	font-weight: 600;
-	padding-bottom: 5px;
-}
-
-dd {
-	padding: 10px;
-	margin-left: 10px;
-}
-
-/*lists*/
-
-ul li, ol li {
-	padding: 3px;
-}
-
-/*PRE*/
-
-pre {
-	background: #F7F7F7;
-	padding: 10px;
-	border-radius: 4px;
-	border: 1px solid #ccc;
-}
-
-
-/*
-====================================
-Global Classes / Wordpress Specific
-====================================
-*/
-
-.aligncenter {
-	text-align: center;
-	margin: 0 auto;
-}
-
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
-}
-
-img {
-	&.alignleft {
-		padding-right: 5px;
-	}
-	&.alignright {
-		padding-left: 5px;
-	}
-}
-
-.clear {
-	width: 100%;
-	float: left;
-	clear: both;
+	padding: 0;
+	list-style-type: none;
 }

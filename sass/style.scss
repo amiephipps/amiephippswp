@@ -1,45 +1,163 @@
 /*
-* Theme Name: HackerYou Starter Theme
-* Theme URI: http://hackeryou.com;
-* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Theme Name: Amie Phipps Portfolio Theme
+* Theme URI: http://www.amiephipps.com;
+* Description: Amie Phipps Portfolio Website.
 * Version: 1.0
-* Author: HackerYou
-* Author URI: http://hackeryou.com
+* Author: Amie Phipps
+* Author URI: http://www.amiephipps.com
 */
 
 @import 'normalize';
 @import 'typography';
-@import 'navigation';
+@import 'animations';
+@import 'themodal';
+@import 'header';
+@import 'footer';
 @import 'sidebar';
 @import 'comments';
-@import 'footer';
-/*
-====================================
-Default Styling
-====================================
-*/
 
+
+// GLOBAL STYLES**********************
 img {
 	max-width: 100%;
 }
 
-body {
-	color: #333;
+.flexParent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
+.wrapper {
+	padding: 4% 4% 4% 3%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	background: white;
 }
 
-.content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
+.relative {
+	position: relative;
 }
 
-.full {
+
+// MAIN PAGE FLEXING**********************
+body > .flexParent {
+	position: relative; //for position fixed on the left size div
+}
+
+.leftSide {
+	width: 30%;
+	display: flex;
+	background: black;
+	color: white;
+	height: 100%;
+	position: fixed;
+}
+
+.rightSide {
+	width: 70%;
+	margin-left: 30%;
+	display: flex;
+}
+
+main {
 	width: 100%;
+	position: relative;
+	margin-bottom: 80%;
+}
+
+// MAIN SECTIONS**********************
+.homepage {
+	text-align: center;
+	h1 {
+		margin-top: 7%;
+	}
+	p {
+		margin: 5%;
+	}
+	.typewriter {
+		height: 5vh; 
+		del {
+			@include fontSize(25);
+			text-decoration: none;
+		}
+	}
+	a {
+		@include fontSize(18);
+		font-weight: 700;
+		display: inline-block;
+		padding: 2% 10%;
+		margin: 5% auto;
+		border: 3px solid black;
+		&:hover, &:focus {
+			background: $purple;
+			color: $mint;
+		}
+	}
+}
+
+.about {
+	.aboutImage {
+		padding-left:11%;
+		padding-top: 5%;
+		position: relative;
+		// z-index: -1;
+		display: inline-block;
+		img{ 
+			width: 270px;
+			height: 265px;
+		}
+		&:after {
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			background-image: linear-gradient(-180deg, rgba(249,246,246,0.00) 42%, rgba(255,255,255,0.73) 100%); 
+		}
+	}
+	.aboutContent {
+		margin-left: 35%;
+		width: 55%;
+		top: -135px;
+		margin-bottom: -135px;
+		// left: 8%;
+		color: #282828;
+		position: relative;
+	}
+}
+
+
+.portfolio {
+	.portfolioItem {
+		@extend .flexParent;
+		justify-content: space-between;
+		li {
+		border: 5px solid black;
+		margin: 2% 0;
+		height: 49%;
+		width: 49%;
+		position: relative;			
+		}
+		img {
+			width: 100%;
+			height: 100%;
+		}
+		p {
+			margin: 0;
+		}
+	}
+	.portfolioSnippet {
+		// padding: 1% 0;
+		// position: absolute;
+		// bottom: 0;
+		width: 100%;
+		text-align: center;
+		// background: rgba(255, 255, 255, 0.7);
+		background-image: linear-gradient(-180deg, rgba(234,234,234,0.32) 0%, rgba(204,204,204,0.11) 17%, rgba(170,170,170,0.00) 90%);
+	}
 }
 
 

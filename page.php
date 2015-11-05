@@ -1,21 +1,22 @@
 <?php get_header();  ?>
 
-<div class="main">
-  <div class="container">
+<div class="rightSide">
+   <main class="homepage">
+   	<div class="wrapper">
 
-    <div class="content">
-      <?php // Start the loop ?>
-      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	      <h1><?php the_field('main_header'); ?></h1>
 
-        <h2><?php the_title(); ?></h2>
-        <?php the_content(); ?>
+			<div class="typewriter">
+	      	<span><del>A Web Developer.<ins>1</ins></del><del>A Designer.<ins>2.5</ins></del><del>A Freelancer.<ins>2.5</ins></del><del>A Dog Lover.<ins>2.5</ins></del></span>
+			</div> <!-- typewriter -->
 
-      <?php endwhile; // end the loop?>
-    </div> <!-- /,content -->
+	      <p><?php the_field('main_description'); ?></p>
 
-    <?php get_sidebar(); ?>
+	      <div class="flexParent">
+	         <a href="http://localhost:3000/amiephipps/portfolio/">See My Work</a>
+	         <a href="#contact" class="smoothScroll">Contact Me</a>
+	      </div>
 
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
-
-<?php get_footer(); ?>
+		</div> <!-- WRAPPER -->
+ 		<?php get_footer(); ?>
+   </main> 

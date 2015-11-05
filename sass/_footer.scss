@@ -1,3 +1,72 @@
 footer {
-	clear: both;
+	position: fixed;
+	bottom: 0;
+	height: 80%;
+	background: $purple;
+	color: $mint;
+	text-align: center;
+	img {
+		width: 5%;
+		display: block;
+		text-align: left;
+		// position: absolute;
+		// bottom: 15px;
+		// left: 0;
+	}
 }
+
+.footerWrapper {
+	padding: 4% 4% 0% 3%;
+}
+
+.contactOptions {
+	@extend .flexParent;
+	justify-content: space-around;
+	align-items: center;
+	.email {
+		width: 50%;
+		a {
+			padding: 3%;
+			display: inline-block;
+			border: 3px solid $mint;
+			color: $mint;
+			@include fontSize(30);
+		}
+	}
+}
+
+p {
+	margin-bottom: 5%;
+}
+
+form {
+	width: 50%;
+	input, textarea {
+		width: 65%;
+		border: 1px solid $mint;
+		padding: 2%;
+		margin: 2%;
+		resize: none;
+		background: rgba(220, 238, 209, 0.5);
+		&:focus {
+			// border: 2px solid black;
+			outline: none;
+		}
+	}
+	textarea {
+		height: 100px;
+	}
+	input[type=submit] {
+		color: black;
+		font-weight: 700;
+		border: 2.5px solid $mint;
+		&:hover, &:focus {
+			background: rgba(220, 238, 209, 0.8);
+		}
+	}
+	::-webkit-input-placeholder {
+	   color: black;
+	}
+}
+
+

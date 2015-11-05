@@ -23,7 +23,7 @@
    <div class="flexParent">
       <div class="leftSide">
          <header class="flexParent">
-            <h2 class="displayNoneAmie">Amie.</h2>
+            <h2 class="animated fadeIn">Amie.</h2>
 
             <nav>
                <?php wp_nav_menu( array(
