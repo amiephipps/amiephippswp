@@ -7,16 +7,14 @@ footer {
 	text-align: center;
 	img {
 		width: 5%;
-		display: block;
-		text-align: left;
-		// position: absolute;
-		// bottom: 15px;
-		// left: 0;
+		position: fixed;
+		bottom: 10px;
+		left: 30%;
 	}
 }
 
 .footerWrapper {
-	padding: 4% 4% 0% 3%;
+	padding: 3% 4% 0% 3%;
 }
 
 .contactOptions {
@@ -31,11 +29,14 @@ footer {
 			border: 3px solid $mint;
 			color: $mint;
 			@include fontSize(30);
+			&:hover {
+				background: rgba(220, 238, 209, 0.8);
+			}
 		}
 	}
 }
 
-p {
+.footerWrapper p {
 	margin-bottom: 5%;
 }
 
@@ -49,7 +50,6 @@ form {
 		resize: none;
 		background: rgba(220, 238, 209, 0.5);
 		&:focus {
-			// border: 2px solid black;
 			outline: none;
 		}
 	}

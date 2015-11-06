@@ -38,12 +38,12 @@ header {
 		text-align: center;
 		@include fontSize(15);
 		a {
-			display: inline-block;
-			padding: 2% 4%;
+			padding: 2% 0;
 			&:hover, &:focus {
-				color: $mint;
+				color: $purple;
 			}
 		}
+
 	}
 	.social {
 		text-align: center;
@@ -57,6 +57,9 @@ header {
 		}
 		span {
 			padding: 5%;
+		}
+		a:hover {
+			color: $purple;
 		}
 	}
 }

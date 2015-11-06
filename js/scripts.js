@@ -1,6 +1,7 @@
 $(function(){
 	$('header ul li:last-of-type a').addClass('smoothScroll');
 	$('header ul li:first-of-type').addClass('item1');
+	$('header ul li a').addClass('hvr-underline-from-center');
 
 	var fin=!1;
 	
@@ -27,25 +28,4 @@ $(function(){
 		 }
 		}
 	});
-
-
-//MODAL STUFF ***********************
-
-	// attach close button handler
-	$('.modal .close').on('click', function(e){
-	    e.preventDefault();
-	    $.modal().close();
-	});
-
-	// open modal with default options or options set with init
-	// content will be taken from #login
-	$('#terms-of-service').modal().open();
-
-	// also we can open modal overriding some default options
-	$('#terms-of-service').modal().open({
-	    closeOnESC: false
-	});
-
-	// Close modal. There's no need to choose which one since only one can be opened
-	$.modal().close();
 });

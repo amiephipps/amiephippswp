@@ -86,14 +86,6 @@ function hackeryou_scripts() {
   	null, //version number
   	true
   );
-
-  wp_enqueue_script(
-  	'modal', //handle
-  	get_template_directory_uri() . '/js/jquery.the-modal.js', //source
-  	array( 'jquery' ), 
-  	null, //version number
-  	true
-  );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts' );
@@ -291,4 +283,4 @@ function get_post_parent($post) {
 	}
 }
 
-show_admin_bar( false );
+show_admin_bar(false);

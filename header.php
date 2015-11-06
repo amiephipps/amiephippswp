@@ -33,11 +33,11 @@
             </nav>
 
             <section class="social">
-               <p><span><a href="http://www.medium.com/amiephipps"><i class="fa fa-medium"></i></a></span>
-               <span><a href="http://www.twitter.com/amiejoyphipps"><i class="fa fa-twitter"></i></a></span>
-               <span><a href="http://www.linkedin.com/in/amiephipps"><i class="fa fa-linkedin"></i></a></span>
-               <span><a href="http://www.codepen.io/amiephipps/"><i class="fa fa-codepen"></i></a></span>
-               <span><a href="http://www.github.com/amiephipps"><i class="fa fa-github-alt"></i></a></span></p>
+               <p><span><a class="hvr-underline-from-center" href="http://www.medium.com/amiephipps"><i class="fa fa-medium"></i></a></span>
+               <span><a class="hvr-underline-from-center" href="http://www.twitter.com/amiejoyphipps"><i class="fa fa-twitter"></i></a></span>
+               <span><a class="hvr-underline-from-center" href="http://www.linkedin.com/in/amiephipps"><i class="fa fa-linkedin"></i></a></span>
+               <span><a class="hvr-underline-from-center" href="http://www.codepen.io/amiephipps/"><i class="fa fa-codepen"></i></a></span>
+               <span><a class="hvr-underline-from-center" href="http://www.github.com/amiephipps"><i class="fa fa-github-alt"></i></a></span></p>
 
                <p>Designed &amp; Coded by Amie Phipps &copy; <?php echo date('Y'); ?></p>
             </section>

@@ -19,7 +19,7 @@
                   <!-- <div class="black"> -->
                      <li class="animated slideInUp">
                         <?php the_post_thumbnail('full'); ?>
-                        <a href="<?php the_field('live_link'); ?>" target="_blank">
+                        <a href="<?php the_permalink() ?> " target="_blank">
                            <div class="portfolioSnippet">
                               <h5><?php the_title(); ?></h5>
                               <p><?php the_field('technology_used'); ?></p>
