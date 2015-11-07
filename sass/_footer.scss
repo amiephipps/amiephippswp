@@ -42,6 +42,7 @@ footer {
 
 form {
 	width: 50%;
+	@include fontSize(13);
 	input, textarea {
 		width: 65%;
 		border: 1px solid $mint;

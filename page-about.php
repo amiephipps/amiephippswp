@@ -4,17 +4,17 @@
    <main class="about"> 
    	<div class="wrapper">     
 			<div class="relative">
-		      <h4 class="slideInDown"><?php the_title(); ?></h4>
+		      <h4 class="animated slideInDown"><?php the_title(); ?></h4>
 
-		      <div class="aboutImage slideInRight">
-		      	<?php the_post_thumbnail('medium'); ?>
+		      <div class="aboutImage animated slideInRight">
+		      	<?php the_post_thumbnail('portfolio'); ?>
 		      </div>
 		      
 		      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>     
-		      <div class="aboutContent slideInRight">
+		      <div class="aboutContent animated slideInUp">
 		         <p><?php the_content(); ?></p>
 
-		    	  	<?php endwhile; // end the loop?>
+		    	 <?php endwhile; // end the loop?>
 
 		   	   <a href="index.php?page_id=57">See My Resume</a>
 		      </div>

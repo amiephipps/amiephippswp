@@ -5,10 +5,12 @@
 
 				<div class="contactOptions">
 					<form action="//formspree.io/me@amiephipps.com" method="POST">
-						<input type="text" placeholder="Your Name" required>
-						<input type="text" placeholder="Your Email" required>
-						<textarea id="textArea" placeholder="Your Message"></textarea>
-						<input type="submit" value="Send">
+					<input name="name" type="text" placeholder="Your Name" required>
+					<input name="_replyto" type="text" placeholder="Your Email" required>
+					<textarea id="textArea" placeholder="Your Message"></textarea>
+					<input name="submit" type="submit" value="Send">
+					<input type="hidden" name="_next" value="//amiephipps.com" />
+					<input type="hidden" name="_subject" value="Reply from Amie Phipps!" />
 					</form>
 
 					<div class="email">
@@ -17,7 +19,7 @@
 				</div> <!-- contactOptions -->
 			</div> <!-- WRAPPER -->
 				
-			<img src="<?php bloginfo('template_url') ?>/images/noun_122236.svg" alt="logo - geodesic dog">
+			<img src="<?php bloginfo('template_url') ?>/images/doglogo.svg" alt="logo - geodesic dog">
 		</footer>
 
 		<div id="contact"></div>

@@ -6,7 +6,7 @@
       
          <h4 class="animated slideInDown">My Work</h4>
 
-         <ul class="portfolioItem">
+         <ul class="portfolioItems">
 
             <?php $portfolio = new WP_query(
                array(
@@ -16,29 +16,26 @@
 
             <?php if($portfolio -> have_posts()): ?>
                <?php while($portfolio -> have_posts()): $portfolio -> the_post(); ?>
-                  <!-- <div class="black"> -->
-                     <li class="animated slideInUp">
-                        <?php the_post_thumbnail('full'); ?>
-                        <a href="<?php the_permalink() ?> " target="_blank">
-                           <div class="portfolioSnippet">
-                              <h5><?php the_title(); ?></h5>
-                              <p><?php the_field('technology_used'); ?></p>
+                     <li class="animated slideInUp portfolioItemsLi">
+                        <div class="portfolioItem">
+                           <div class="portfolioImage">
+                              <?php the_post_thumbnail('portfolio'); ?>
                            </div>
-                        </a>
+                           <div class="portfolioContent displayNone">
+                              <h6><?php the_field('technology_used'); ?></h6>
+                              <h5><?php the_title(); ?></h5>
+                              <p><?php the_field('description'); ?></p>
+                              <a href="<?php the_field('live_link'); ?>" target="_blank">View Live Site</a>
+                              <a href="<?php the_permalink(); ?>">Read More...</a>
+                           </div> <!-- portfolio content -->
+                        </div> <!-- portfolio image -->
                      </li>
-                  <!-- </div> -->
                <?php endwhile; ?>
 
                <?php wp_reset_postdata(); ?>
             <?php endif; ?>
 
          </ul>
-
-         <div class="modal" id="terms-of-service" style="display: none">
-                 <a href="#" class="close">MODAL BUTTON BOX</a>
-
-                 Terms of service here
-         </div>
 
       </div> <!-- WRAPPER -->
       <?php get_footer(); ?>

@@ -108,6 +108,9 @@ main {
 			@include fontSize(25);
 			text-decoration: none;
 		}
+		.t-caret {
+			@include fontSize(25);
+		}
 	}
 	a {
 		@include fontSize(18);
@@ -128,27 +131,26 @@ main {
 		padding-top: 2%;
 		position: relative;
 		display: inline-block;
-		img{ 
-			width: 270px;
-			height: 265px;
-		}
-		&:after {
-			position: absolute;
-			content: '';
-			left: 0;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			background-image: linear-gradient(-180deg, rgba(249,246,246,0.00) 42%, rgba(255,255,255,0.73) 100%); 
-		}
+	// &:after {
+	// 	position: absolute;
+	// 	content: '';
+	// 	left: 0;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	right: 0;
+	// 	background-image: linear-gradient(-180deg, rgba(249,246,246,0.00) 42%, rgba(255,255,255,0.73) 100%); 
+	// }
 	}
 	.aboutContent {
-		margin-left: 35%;
+		margin-left: 38%;
+		margin-bottom: -130px;
+		padding: 2%;
 		width: 55%;
-		top: -135px;
-		margin-bottom: -135px;
+		top: -130px;
 		color: #282828;
 		position: relative;
+		border: 3px solid $purple;
+		background: white;
 	}
 	a {
 		@include fontSize(18);
@@ -163,36 +165,104 @@ main {
 	}
 }
 
-
-.portfolio {
-	.portfolioItem {
+.resume {
+	.resumeHeader {
 		@extend .flexParent;
 		justify-content: space-between;
-		li {
-		border: 5px solid black;
-		margin: 2% 0;
-		height: 49%;
-		width: 49%;
-		position: relative;			
-		}
-		img {
-			width: 100%;
-			height: 100%;
-		}
-		p {
-			margin: 0;
+	}
+	.resumeContent {
+		@extend .flexParent;
+		margin-top: 3%;
+	}
+	h5 {
+		@include fontSize(25);
+		border-bottom: 1px solid black;
+		width: 80%;
+		margin: 2%;
+	}
+	h6 {
+		margin-bottom: 0.5%;
+	}
+	ul {
+		list-style-type: square;
+		padding-left: 2%;
+	}
+	li {
+		@include fontSize(15);
+	}
+	li:last-of-type {
+		padding-bottom: 5%;
+	}
+	p {
+		margin: 0;
+	}
+	.skills {
+		width: 25%;
+		padding-right: 3%;
+		ul {
+			margin-top: 2%;
 		}
 	}
-	.portfolioSnippet {
-		// padding: 1% 0;
-		// position: absolute;
-		// bottom: 0;
-		width: 100%;
-		text-align: center;
-		// background: rgba(255, 255, 255, 0.7);
-		background-image: linear-gradient(-180deg, rgba(234,234,234,0.32) 0%, rgba(204,204,204,0.11) 17%, rgba(170,170,170,0.00) 90%);
+	.experience {
+		width: 75%;
+		border-left: 3px solid $purple;
+		padding-left: 3%;
 	}
 }
+
+
+.portfolio {
+	.portfolioItems {
+		@extend .flexParent;
+		justify-content: flex-start;
+		li {
+			width: calc(33.33% - 2%);
+			margin: 1%;
+			.portfolioItem {
+				position: relative;
+				text-align: center;
+				overflow: hidden;
+				&:hover .portfolioContent {
+					opacity: 1;
+				}
+				&:hover .portfolioImage img {
+					transform: scale(1.1);
+				}
+				.portfolioImage {
+					img {
+						width: 100%;
+						height: 100%;
+						display: block;
+						transition: all 400ms ease;
+					}
+				}
+			}
+			.portfolioContent {
+				background-color: rgba(31, 41, 51, 0.7);
+				border: 4px solid $purple;
+				color: white;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: all 400ms ease;
+				a {
+					display: block;
+					width: 55%;
+					color: white;
+					padding: 2% 4%;
+					margin: 3% auto;
+					border: 2px solid white;
+				}
+			}
+		}
+	}
+}
+
 
 
 //Hover effects from hover.css
