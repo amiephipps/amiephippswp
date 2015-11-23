@@ -14,6 +14,7 @@
 @import 'footer';
 @import 'sidebar';
 @import 'comments';
+@import 'blog';
 
 
 // GLOBAL STYLES**********************
@@ -28,11 +29,14 @@ img {
 }
 
 .wrapper {
-	padding: 4% 4% 4% 3%;
+	padding: 3% 5% 5% 3%;
 	height: 100%;
 	position: relative;
 	z-index: 1;
 	background: white;
+	@include mobileLandscape {
+		padding: 4% 8%;
+	}
 }
 
 .relative {
@@ -70,46 +74,87 @@ img {
 // MAIN PAGE FLEXING**********************
 body > .flexParent {
 	position: relative; //for position fixed on the left size div
+	@include mobileLandscape {
+		position: static;
+	}
 }
 
 .leftSide {
-	width: 30%;
+	width: 22%;
 	display: flex;
 	background: black;
 	color: white;
 	height: 100%;
 	position: fixed;
+	padding: 16px 0;
+	@include mobileLandscape {
+		width: 100%;
+		position: static;
+		z-index: 10;
+	}
 }
 
 .rightSide {
-	width: 70%;
-	margin-left: 30%;
+	width: 78%;
+	margin-left: 22%;
 	display: flex;
+	@include mobileLandscape {
+		width: 100%;
+		margin-left: 0;
+	}
 }
 
 main {
 	width: 100%;
 	position: relative;
 	margin-bottom: 80%;
+	@include large {
+		margin-bottom: 600px;
+	}
+	@include mobileLandscape {
+		margin-bottom: 0;
+	}
 }
 
-// MAIN SECTIONS**********************
+// MAIN SECTIONS **********************
+
+// HOMEPAGE **********************
+
 .homepage {
 	text-align: center;
 	h1 {
 		margin-top: 7%;
+		@include medium {
+			margin-top: 11%;
+		}
 	}
 	.homepageParagraph {
-		margin: 5%;
+		margin: 7% 5%;
 	}
 	.typewriter {
-		height: 5vh; 
+		height: 10vh; 
+		@include mobileLandscape {
+			height: 10vh;
+		}
 		del {
 			@include fontSize(25);
 			text-decoration: none;
+			@include mobileLandscape {
+				@include fontSize(18);
+			}
 		}
 		.t-caret {
 			@include fontSize(25);
+			@include mobileLandscape {
+				@include fontSize(18);
+			}
+		}
+	}
+	.homepageButtons {
+		margin: 2% auto;
+		@extend .flexParent;
+		@include large {
+			flex-direction: column;
 		}
 	}
 	a {
@@ -125,25 +170,30 @@ main {
 	}
 }
 
+// ABOUT PAGE **********************
+
 .about {
 	.aboutImage {
 		padding-left:10%;
 		padding-top: 2%;
 		position: relative;
 		display: inline-block;
-	// &:after {
-	// 	position: absolute;
-	// 	content: '';
-	// 	left: 0;
-	// 	top: 0;
-	// 	bottom: 0;
-	// 	right: 0;
-	// 	background-image: linear-gradient(-180deg, rgba(249,246,246,0.00) 42%, rgba(255,255,255,0.73) 100%); 
-	// }
+		@include large {
+			padding-left: 0;
+		}
+		@include mobileLandscape {
+			position: static;
+			display: block;
+			margin: 8% auto 12%;
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+		}
 	}
 	.aboutContent {
 		margin-left: 38%;
-		margin-bottom: -130px;
+		margin-bottom: -90px;
 		padding: 2%;
 		width: 55%;
 		top: -130px;
@@ -151,6 +201,14 @@ main {
 		position: relative;
 		border: 3px solid $purple;
 		background: white;
+		@include large {
+			width: 62%;
+		}
+		@include mobileLandscape {
+			position: static;
+			width: 100%;
+			margin: 0 auto 5%;
+		}
 	}
 	a {
 		@include fontSize(18);
@@ -166,19 +224,29 @@ main {
 }
 
 .resume {
-	.resumeHeader {
-		@extend .flexParent;
-		justify-content: space-between;
+	.resumeHeader p {
+		text-align: right;
+		margin: 1% 0;
+		a {
+		@include fontSize(15);
+		border: 3px solid black;
+		padding: 2% 4%;
+		&:hover {
+			background: $purple;
+			}
+		}
 	}
 	.resumeContent {
 		@extend .flexParent;
 		margin-top: 3%;
+		@include mobile {
+			flex-direction: column;
+		}
 	}
 	h5 {
 		@include fontSize(25);
 		border-bottom: 1px solid black;
 		width: 80%;
-		margin: 2%;
 	}
 	h6 {
 		margin-bottom: 0.5%;
@@ -199,71 +267,254 @@ main {
 	.skills {
 		width: 25%;
 		padding-right: 3%;
-		ul {
-			margin-top: 2%;
+		@include large {
+			padding-left: 3%;
+		}
+		@include mobileLandscape {
+			width: 30%;
+			li {
+				line-height: 1.7;
+			}
+		}
+		@include mobile {
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 5%;
 		}
 	}
 	.experience {
 		width: 75%;
 		border-left: 3px solid $purple;
 		padding-left: 3%;
+		@include mobileLandscape {
+			padding-left: 7%;
+			width: 70%;
+			p {
+				margin-bottom: 10%;
+			}
+		}
+		@include mobile {
+			width: 100%;
+			margin: 0 auto;
+			border: none;
+			padding: 0 5%;
+		}
 	}
 }
 
+// PORTFOLIO PAGE **********************
 
 .portfolio {
 	.portfolioItems {
 		@extend .flexParent;
 		justify-content: flex-start;
+		@include mobileLandscape {
+			padding-top: 5%;
+		}
+		h6, h5 {
+			text-align: center;
+		}
+		h5 {
+			font-family: 'Droid', sans-serif;
+			margin: 3% 0 4%;
+			@include fontSize(15);
+			&:after {
+				content: "";
+				border-bottom: 1px solid black;
+				display: block;
+				width:30%;
+				margin: 0 auto;
+				padding-bottom: 3%;
+			}
+		}
+		h6 {
+			margin-bottom: 15%;
+			@include fontSize(13);
+			font-weight: 400;
+		}
+		li:nth-child(3n+4), li:nth-of-type(1) {
+			margin-left: 0;
+		}
+		li:nth-child(3n+3) {
+			margin-right: 0;
+		}
+		li:nth-child(3n+2) {
+			margin: 1% 2%;
+			@include large {
+				margin: 0;
+			}
+		}
 		li {
 			width: calc(33.33% - 2%);
-			margin: 1%;
-			.portfolioItem {
-				position: relative;
-				text-align: center;
-				overflow: hidden;
-				&:hover .portfolioContent {
-					opacity: 1;
+			margin: 1% 1% 3% 1%;
+			@include large {
+				width: calc(50% - 1%);
+				margin: 0;
+				&:nth-child(odd) {
+					margin-right: 1%;
+					@include mobileLandscape {
+						margin: 0;
+					}
 				}
-				&:hover .portfolioImage img {
-					transform: scale(1.1);
-				}
-				.portfolioImage {
-					img {
-						width: 100%;
-						height: 100%;
-						display: block;
-						transition: all 400ms ease;
+				&:nth-child(even) {
+					margin-left: 1%;
+					@include mobileLandscape {
+						margin: 0;
 					}
 				}
 			}
-			.portfolioContent {
-				background-color: rgba(31, 41, 51, 0.7);
-				border: 4px solid $purple;
-				color: white;
-				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
+			@include mobileLandscape {
 				width: 100%;
-				height: 100%;
-				opacity: 0;
-				transition: all 400ms ease;
-				a {
+			}
+		}
+		.portfolioItem {
+			position: relative;
+			text-align: center;
+			overflow: hidden;
+			&:hover .portfolioContent {
+				opacity: 0.9;
+			}
+			&:hover .portfolioImage img {
+				transform: scale(1.1);
+			}
+			.portfolioImage {
+				img {
+					width: 100%;
+					height: 100%;
 					display: block;
-					width: 55%;
-					color: white;
-					padding: 2% 4%;
-					margin: 3% auto;
-					border: 2px solid white;
+					transition: all 400ms ease;
+				}
+			}
+		}
+		.portfolioContent {
+			background-color: rgba(31, 41, 51, 0.8);
+			border: 4px solid $purple;
+			color: white;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: all 400ms ease;
+			@include medium {
+				opacity: 1;
+			}
+			p {
+				padding: 6% 2%;
+				line-height: 1.3;
+			}
+			a {
+				@include fontSize(18);
+				display: block;
+				width: 70%;
+				color: white;
+				padding: 2% 6%;
+				margin: 10% auto;
+				border: 2px solid white;
+				&:hover {
+					background: rgba(255, 255, 255, 0.4);
 				}
 			}
 		}
 	}
 }
 
+.singlePortfolio {
+	.singlePortfolioHeader {
+		border-bottom: 1px solid black;
+		@extend .flexParent;
+		justify-content: space-between;
+		@include medium {
+			flex-direction: column;
+		}
+		h4 {
+			border: none;
+			padding: 0;
+		}
+		p {
+			width: 40%;
+			text-align: right;
+			margin: 1% 0;
+			@include medium {
+				width: 100%;
+				margin-bottom: 5%;
+			}
+			a {
+				@include fontSize(15);
+				border: 3px solid black;
+				padding: 2% 4%;
+				&:hover {
+					background: $purple;
+				}
+			}
+		}
+	}
+	.singleItem {
+		@extend .flexParent;
+		justify-content: space-between;
+	}
+	.singlePortfolioImage {
+		margin: 0 auto 6%;
+	}
+	.singlePortfolioContent {
+		width: 75%;
+		border: 3px solid $purple;
+		padding: 1% 2%;
+		margin: 0 auto 6%;
+		@include mobileLandscape {
+			width: 95%;
+			margin: 5% auto 6%;
+		}
+	}
+}
 
+// SERVICES PAGE **********************
+
+.services {
+	h5 {
+		line-height: 1.7;
+	}
+	.servicesLists {
+		margin: 6% 0;
+		@extend .flexParent;
+		justify-content: space-between;
+		@include mobileLandscape {
+			flex-direction: column;
+		}
+		.servicesList {
+			text-align: left;
+			width: 48%;
+			border: 3px solid $purple;
+			margin: 1% auto;
+			padding: 2% 3%;
+			@include mobileLandscape {
+				width: 100%;
+				margin: 5% auto;
+			}
+			h6 {
+				text-decoration: underline;
+				@include fontSize(19);
+			}
+			ul {
+				padding-left: 10%;
+				li {
+					@include fontSize(17);
+					list-style-type: square;
+					padding: 2%;
+				}
+			}
+		}
+		.servicesList:first-of-type {
+			margin-right: 2%;
+			@include mobileLandscape {
+				margin: 0;
+			}
+		}
+	}	
+}
 
 //Hover effects from hover.css
 //Animations from animate.css

@@ -14,6 +14,7 @@ function theme_setup() {
 	set_post_thumbnail_size(120, 90, true);
 	add_image_size('square', 150, 150, true);
 	add_image_size('portfolio', 300, 300, true);
+	add_image_size('blogImage', 400, 400, true);
 
 
 	// Add default posts and comments RSS feed links to head
@@ -74,7 +75,7 @@ function hackeryou_scripts() {
 
   wp_enqueue_script(
   	'smoothscroll', //handle
-  	get_template_directory_uri() . '/js/smoothScroll.js', //source
+  	get_template_directory_uri() . '/js/smoothscroll.js', //source
   	array( 'jquery' ), 
   	null, //version number
   	true
@@ -141,7 +142,7 @@ add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function hackeryou_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
+	return '<p><a href="'. get_permalink() . '">Read More...</span></a></p>';
 }
 
 /**

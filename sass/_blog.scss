@@ -1,0 +1,53 @@
+//BLOG PAGE
+
+.blogEntry {
+	@extend .flexParent;
+	justify-content: space-between;
+	align-items: center;
+	.blogImage, .blogContent {
+		width: 49%;
+	}
+	.blogImage {
+		// width: 100%;
+		height: auto;
+	}
+	.blogContent {
+		h4 {
+			@include fontSize(25);
+			border: none;
+			padding: 0;
+			margin: 0;
+		}
+		a {
+			color: $purple;
+			&:hover {
+				color: darken($purple, 20%);
+			}
+		}
+		> p:nth-of-type(1) {
+			@include fontSize(14);
+		}
+	}
+}
+
+//SINGLE BLOG POST PAGE
+
+.singleBlog {
+	h4 {
+		@include fontSize(28);
+	}
+	a {
+		color: $purple;
+		&:hover {
+			color: darken($purple, 20%);
+		}
+	}
+	.thePost {
+		> p:nth-of-type(1) {
+			@include fontSize(14);
+		}
+	}
+	img.wp-post-image {
+		height: auto;
+	}
+}

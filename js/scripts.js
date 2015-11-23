@@ -1,5 +1,5 @@
 $(function(){
-	$('header ul li:last-of-type a').addClass('smoothScroll');
+	$('header ul li a').addClass('smoothScroll');
 	$('header ul li:first-of-type').addClass('item1');
 	$('header ul li a').addClass('hvr-underline-from-center');
 
@@ -12,10 +12,10 @@ $(function(){
 //TYPEWRITER STUFF ***************************
 
 	$('.typewriter').t({
-		speed: 200,
+		speed: 100,
 		speed_vary: false,
 		mistype: false,
-		blink: true,
+		blink: false,
 		// caret: false,
 		repeat: true,
 		typing:function(elem,chars_total,chars_left,_char){

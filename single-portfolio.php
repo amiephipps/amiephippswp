@@ -1,19 +1,29 @@
 <?php get_header();  ?>
 
 <div class="rightSide">
-   <main class="homepage">
-      <div class="wrapper">
+   <main class="singlePortfolio">
+      <div class="wrapper animated fadeIn">
 
-         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-         	<?php while( has_sub_field('images') ): ?>   
+			<div class="singlePortfolioHeader">
+				<h4><?php the_title(); ?></h4>
+				<p><a href="http://www.amiephipps.com/portfolio">Back to My Work</a></p>
+			</div>
 
-         		<?php $image = get_sub_field('image'); ?>
-         		<img src="<?php echo $image['sizes']['large'] ?>" alt="">      
+			<div class="singleItem">
+				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+					<div class="singlePortfolioImage">
+						<?php while( has_sub_field('images') ): ?>   
 
-         	<?php endwhile; ?>
-            <p><?php the_content(); ?></p>
-               
-         <?php endwhile; // end of the loop. ?>
+							<?php $image = get_sub_field('image'); ?>
+							<img src="<?php echo $image['sizes']['large'] ?>" alt="">      
+	
+						<?php endwhile; ?>
+					</div>
+					<div class="singlePortfolioContent">
+						<p><?php the_content(); ?></p>
+					</div>
+				<?php endwhile; // end of the loop. ?>
+			</div> <!-- singleItem -->
 
       </div> <!-- WRAPPER -->
       <?php get_footer(); ?>

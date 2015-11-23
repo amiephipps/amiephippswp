@@ -1,17 +1,10 @@
-<?php get_header('page');  ?>
+<?php get_header();  ?>
 
 <div class="rightSide">
    <main class="resume"> 
    	<div class="wrapper">     
    		<div class="resumeHeader">
-   			<div class="resumeTitle">
-	     	 		<h4><?php the_title(); ?></h4>
-	     	 	</div>
-	     	 	<div class="resumeReturnLinks">
-	   	 		<a href="http://www.amiephipps.com">Homepage</a>
-	   	 		<a href="http://www.amiephipps.com/about">About</a>
-	   	 		<a href="#contact" class="smoothScroll">Contact</a>
-	   	 	</div>
+	   	 	<p><a href="http://www.amiephipps.com/amiephippsresume.pdf">Download Resume</a></p>
 			</div>
 
 			<div class="resumeContent">
@@ -23,27 +16,32 @@
 		         	<li>Sass, Less</li>
 		         	<li>JavaScript</li>
 		         	<li>jQuery</li>
+		         	<li>AngularJS</li>
 		         	<li>PHP</li>
 		         	<li>WordPress, Custom Wordpress Themes</li>
 		         	<li>Gulp, Grunt</li>
-		         	<li>Git, GitHub</li>
-		         	<li>Responsive</li>
+		         	<li>GitHub</li>
+		         	<li>Responsive Web Design</li>
+		         	<li>VB.NET</li>
+		         	<li>Python</li>
+		         	<li>ArcGIS</li>
 					</ul>
 		      </div>
 		      <div class="experience">
 		      	<h5>Experience</h5>
 		      	<h6>Freelance Web Developer</h6>
 		      	<ul>
-		      		<li>Make websites</li>
-		      		<li>More websites</li>
-		      		<li>Even more websites</li>
+		      		<li>Establish relationships with clients and understand their business goals and objectives</li>
+		      		<li>Create custom websites based on required criteria</li>
+		      		<li>Use industry standard technologies to bring websites to life</li>
 		      	</ul>
 
-		      	<h6>Freelance Web Developer</h6>
+		      	<h6>GIS/Data Analyst</h6>
 		      	<ul>
-		      		<li>Make websites</li>
-		      		<li>More websites</li>
-		      		<li>Even more websites</li>
+		      		<li>Create maps for clients to aid in their decision making process</li>
+		      		<li>Facilitate GIS workflows</li>
+		      		<li>Aid in acquisition, editing, transformation, and management of large amounts of data in various formats</li>
+		      		<li>Demographic and spatial analytics to target customers based on custom criteria</li>
 		      	</ul>
 
 		      	<h5>Education</h5>

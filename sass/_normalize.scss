@@ -32,25 +32,26 @@ $mint: black;
 	font-size: ($fontSize / 10) *1rem;
 }
 
-@mixin bp($point) {
-  $large: "(max-width: 960px)";
-  $medium: "(max-width: 768px)";
-  $small: "(max-width: 480px)";
-  $mobile: "(max-width: 320px)";
+@mixin large {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
 
-  @if $point == large {
-    @media #{$large} { @content; }
+@mixin medium {
+  @media (max-width: 768px) {
+    @content;
   }
-  @else if $point == medium {
-    @media #{$medium} { @content; }
+}
+
+@mixin mobileLandscape {
+  @media (max-width: 480px) {
+    @content;
   }
-  @else if $point == small {
-    @media #{$small}  { @content; }
-  }
-  @else if $point == mobile {
-  	@media #{$mobile} { @content; }
-  }
-  @else if $point == mini {
-  	@media #{$mini} { @content; }
+}
+
+@mixin mobile {
+  @media (max-width: 320px) {
+    @content;
   }
 }

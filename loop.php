@@ -3,9 +3,9 @@
 <?php if ( ! have_posts() ) : ?>
 
 	<article id="post-0" class="post error404 not-found">
-		<h1 class="entry-title">Not Found</h1>
+		<h2 class="entry-title">Not Found</h2>
 		<section class="entry-content">
-			<p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
+			<p>My apologies, but no results were found for the requested archive. Perhaps searching will help find a related post!</p>
 			<?php get_search_form(); ?>
 		</section><!-- .entry-content -->
 	</article><!-- #post-0 -->
@@ -16,27 +16,30 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title">
-        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-          <?php the_title(); ?>
-        </a>
-      </h2>
+		<article class="blogEntry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<section class="blogImage animated fadeIn">
+				<?php the_post_thumbnail('blogImage'); ?>
+			</section>
 
-			<section class="entry-content">
-				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
-				<?php wp_link_pages( array(
-          'before' => '<div class="page-link"> Pages:',
-          'after' => '</div>'
-        )); ?>
-			</section><!-- .entry-content -->
+			<section class="blogContent animated fadeIn">	
+				<h4 class="entry-title">
+		        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+		          <?php the_title(); ?>
+		        </a>
+		      </h4>
+				
+				<p><?php the_date(); ?><?php the_tags('Tags: ', ', ', '<br>'); ?> ■ <?php the_category(', '); ?></p>
+				
+				<section class="entry-content">
+					<?php the_excerpt(); ?>
+					<?php wp_link_pages( array(
+		         	'before' => '<div class="page-link"> Pages:',
+		            'after' => '</div>'
+		         )); ?>
+				</section><!-- .entry-content -->
 
-			<footer>
-				<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
-        <p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
-        <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
-			</footer>
 
+			</section> <!-- blogContent -->
 		</article><!-- #post-## -->
 
 		<?php comments_template( '', true ); ?>

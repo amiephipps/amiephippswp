@@ -1,14 +1,23 @@
 
-#top, #bottom, #right {
+#top, #bottom, #right, #left {
 	background: black;
 	}
-#right {
+#right, #left {
 	top: 0; bottom: 0;
 	width: 15px;
 	z-index: 1000;
 	position: fixed;
 	}
-#right { right: 0; }
+#right { 
+	right: 0; 
+}
+#left { 
+	left: 0;
+	display: none; 
+	@include mobileLandscape {
+		display: block;
+	}
+}
 	
 #top, #bottom {
 	left: 0; right: 0;
@@ -16,8 +25,20 @@
 	position: fixed;
 	z-index: 1000;
 	}
-#top { top: 0; }
+#top { 
+	top: 0; 
+	@include mobileLandscape {
+		display: none;
+	}
+}
 #bottom { bottom: 0; }
+
+.mainFlexer {
+	@extend .flexParent;
+	@include mobileLandscape {
+		flex-direction: column;
+	}
+}
 
 header.flexParent {
 	flex-direction: column;
@@ -28,22 +49,29 @@ header.flexParent {
 
 header > * {
 	width: 85%;
+	@include mobileLandscape {
+		width: 100%;
+	}
 }
 
 header {
 	h2 {
 		margin: 0;
+		text-align: center;
+		@include mobileLandscape {
+			padding: 5% 0;
+		}
 	}
 	ul {
 		text-align: center;
-		@include fontSize(15);
+		@include fontSize(17);
+		font-weight: 700;
 		a {
 			padding: 2% 0;
 			&:hover, &:focus {
 				color: $purple;
 			}
 		}
-
 	}
 	.social {
 		text-align: center;
@@ -51,9 +79,15 @@ header {
 		p:first-of-type {
 			@include fontSize(18);
 			margin: 10% 0;
+			@include mobileLandscape {
+				margin: 5% 0;
+			}
 		}
 		p:last-of-type {
 			@include fontSize(11);
+			@include mobileLandscape {
+				display: none;
+			}
 		}
 		span {
 			padding: 5%;
@@ -64,12 +98,4 @@ header {
 	}
 }
 
-.displayNoneAmie {
-	visibility: hidden;
-}
-
-header h2, .displayNoneAmie {
-	padding-top: 10%;
-	text-align: center;
-}
 
