@@ -15,10 +15,11 @@
 <?php // if there are posts, Start the Loop. ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-
 		<article class="blogEntry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<section class="blogImage animated fadeIn">
-				<?php the_post_thumbnail('blogImage'); ?>
+				<a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+					<?php the_post_thumbnail('blogImage'); ?>
+				</a>
 			</section>
 
 			<section class="blogContent animated fadeIn">	
@@ -28,7 +29,7 @@
 		        </a>
 		      </h4>
 				
-				<p><?php the_date(); ?><?php the_tags('Tags: ', ', ', '<br>'); ?> ■ <?php the_category(', '); ?></p>
+				<p><?php the_date(); ?> ■ <?php the_category(', '); ?></p>
 				
 				<section class="entry-content">
 					<?php the_excerpt(); ?>

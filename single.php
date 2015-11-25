@@ -8,7 +8,7 @@
             <div class="thePost" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                <h4 class="entry-title"><?php the_title(); ?></h4>
 
-               <p><?php the_date(); ?><?php the_tags('Tags: ', ', ', '<br>'); ?> ■ <?php the_category(', '); ?></p>
+               <p><?php the_date(); ?> ■ <?php the_category(', '); ?></p>
 
                <?php the_post_thumbnail('lar'); ?>
                <div class="entry-content">
@@ -20,7 +20,7 @@
                </div><!-- .entry-content -->
 
                <div class="entry-meta">
-                  <?php hackeryou_posted_on(); ?>
+                  <?php //hackeryou_posted_on(); ?>
                </div><!-- .entry-meta -->
             </div><!-- #post-## -->
 
