@@ -121,21 +121,9 @@ main {
 // HOMEPAGE **********************
 
 .homepage {
-	text-align: center;
-	h1 {
-		margin-top: 7%;
-		@include medium {
-			margin-top: 11%;
-		}
-	}
-	.homepageParagraph {
-		margin: 7% 5%;
-	}
+	text-align: left;
 	.typewriter {
-		height: 10vh; 
-		@include mobileLandscape {
-			height: 10vh;
-		}
+		margin-top: 3%;
 		del {
 			@include fontSize(25);
 			text-decoration: none;
@@ -150,10 +138,35 @@ main {
 			}
 		}
 	}
-	.homepageButtons {
-		margin: 2% auto;
+	.homepageContentFlexer {
+		margin: 3% 0;
 		@extend .flexParent;
-		@include large {
+		justify-content: space-between;
+		position: relative;
+		.homepageImage {
+			width: 49%;
+			img {
+				height: auto;	
+			}
+		}
+		.homepageParagraph {
+			width: 60%;
+			position: absolute;
+			left: 40%;
+			font-weight: 700;
+			@include medium {
+				position: static;
+				width: 49%;
+				margin: 0;
+			}
+		}
+	}
+	.homepageButtons {
+		margin: 5% auto;
+		border-top: 3px solid $purple;
+		border-bottom: 3px solid $purple;
+		@extend .flexParent;
+		@include medium {
 			flex-direction: column;
 		}
 	}
@@ -161,11 +174,112 @@ main {
 		@include fontSize(18);
 		font-weight: 700;
 		display: inline-block;
-		padding: 2% 10%;
-		margin: 5% auto;
+		padding: 2% 8%;
+		margin: 3% auto;
 		border: 3px solid black;
+		border-radius: 3px;
 		&:hover, &:focus {
 			background: $purple;
+		}
+	}
+	.homepageWork, .homepageBlog {
+		@extend .flexParent;
+		justify-content: space-between;
+		> div:nth-of-type(1) {
+			width: 22%;
+			h5, p {
+				text-align: left;
+				font-family: 'Droid', sans-serif;
+				line-height: 1.4;
+			}
+			p {
+				@include fontSize (14);
+			}
+			h5 {
+				margin: 0;
+			}
+			a {
+				color: $purple;
+				padding: 0;
+				border: none;
+				font-weight: 400;
+				&:hover {
+					background: none;
+					color: darken($purple, 20%);
+				}
+			}
+		}
+		> div:nth-of-type(2) {
+			width: 77%;
+			@extend .flexParent;
+			justify-content: space-between;
+			> div {
+				width: 28%;
+				@include medium {
+					width: 31%;
+				}
+			}
+		}
+		.homepageEntry {
+			width: 28%;
+			img {
+				height: auto;
+			}
+			a {
+				padding: 0;
+				margin: 0;
+				border: none;
+				&:hover {
+					background: none;
+				}
+			}
+			section:nth-of-type(2) a {
+				font-weight: 400;
+				@include fontSize(15);
+				margin-top: 1%;
+				// color: $purple;
+			}
+			@include medium {
+				width: 31%;
+			}
+		}
+	}
+	.homepageBlog {
+		margin-top: 5%;
+	}
+	.homepageWork {
+		.portfolioContent {
+			background-color: rgba(31, 41, 51, 0.8);
+			border: 4px solid $purple;
+			color: white;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: all 500ms ease;
+			@include medium {
+				opacity: 1;
+			}
+			p {
+				padding: 6% 2%;
+				line-height: 1.3;
+			}
+			a {
+				@include fontSize(18);
+				display: block;
+				width: 70%;
+				color: white;
+				padding: 2% 6%;
+				margin: 10% auto;
+				border: 2px solid white;
+				&:hover {
+					background: rgba(255, 255, 255, 0.4);
+				}
+			}
 		}
 	}
 }
@@ -304,6 +418,84 @@ main {
 
 // PORTFOLIO PAGE **********************
 
+//Portfolio items on both homepage and portfolio page
+.portfolioItem {
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	&:hover .portfolioContent {
+		opacity: 0.9;
+	}
+	&:hover .portfolioImage img {
+		transform: scale(1.1);
+	}
+	.portfolioImage {
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			transition: all 400ms ease;
+		}
+	}
+}
+.portfolioContent {
+	background-color: rgba(31, 41, 51, 0.8);
+	border: 4px solid $purple;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 500ms ease;
+	@include medium {
+		opacity: 1;
+	}
+	p {
+		padding: 6% 2%;
+		line-height: 1.3;
+	}
+	a {
+		@include fontSize(18);
+		display: block;
+		width: 70%;
+		color: white;
+		padding: 2% 6%;
+		margin: 10% auto;
+		border: 2px solid white;
+		&:hover {
+			background: rgba(255, 255, 255, 0.4);
+		}
+	}
+}
+.homepageWork div:nth-of-type(2), .portfolioItems {
+	h6, h5 {
+			text-align: center;
+		}
+	h5 {
+		font-family: 'Droid', sans-serif;
+		margin: 3% 0 4%;
+		@include fontSize(15);
+		&:after {
+			content: "";
+			border-bottom: 1px solid black;
+			display: block;
+			width:30%;
+			margin: 0 auto;
+			padding-bottom: 3%;
+		}
+	}
+	h6 {
+		margin-bottom: 15%;
+		@include fontSize(13);
+		font-weight: 400;
+	}
+}
+
+//Just for portfolio page
 .portfolio {
 	.portfolioItems {
 		@extend .flexParent;
@@ -311,27 +503,7 @@ main {
 		@include mobileLandscape {
 			padding-top: 5%;
 		}
-		h6, h5 {
-			text-align: center;
-		}
-		h5 {
-			font-family: 'Droid', sans-serif;
-			margin: 3% 0 4%;
-			@include fontSize(15);
-			&:after {
-				content: "";
-				border-bottom: 1px solid black;
-				display: block;
-				width:30%;
-				margin: 0 auto;
-				padding-bottom: 3%;
-			}
-		}
-		h6 {
-			margin-bottom: 15%;
-			@include fontSize(13);
-			font-weight: 400;
-		}
+		
 		li:nth-child(3n+4), li:nth-of-type(1) {
 			margin-left: 0;
 		}
@@ -367,58 +539,7 @@ main {
 				width: 100%;
 			}
 		}
-		.portfolioItem {
-			position: relative;
-			text-align: center;
-			overflow: hidden;
-			&:hover .portfolioContent {
-				opacity: 0.9;
-			}
-			&:hover .portfolioImage img {
-				transform: scale(1.1);
-			}
-			.portfolioImage {
-				img {
-					width: 100%;
-					height: 100%;
-					display: block;
-					transition: all 400ms ease;
-				}
-			}
-		}
-		.portfolioContent {
-			background-color: rgba(31, 41, 51, 0.8);
-			border: 4px solid $purple;
-			color: white;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			opacity: 0;
-			transition: all 400ms ease;
-			@include medium {
-				opacity: 1;
-			}
-			p {
-				padding: 6% 2%;
-				line-height: 1.3;
-			}
-			a {
-				@include fontSize(18);
-				display: block;
-				width: 70%;
-				color: white;
-				padding: 2% 6%;
-				margin: 10% auto;
-				border: 2px solid white;
-				&:hover {
-					background: rgba(255, 255, 255, 0.4);
-				}
-			}
-		}
+		
 	}
 }
 
