@@ -623,15 +623,35 @@ main {
 // SERVICES PAGE **********************
 
 .services {
-	h5 {
-		line-height: 1.7;
+	.servicesHeader {
+		border-bottom: 3px solid $purple;
+		padding-bottom: 2%;
+		margin-bottom: 2%;
+		p {
+			width: 80%;
+			margin: 0 auto;
+			text-align: center;
+		}
 	}
 	.servicesLists {
-		margin: 6% 0;
 		@extend .flexParent;
 		justify-content: space-between;
 		@include mobileLandscape {
 			flex-direction: column;
+		}
+		.typeOfService {
+			width: 33%;
+
+				img {
+					display: block;
+					margin: 0 auto;
+					width: 70%;
+				}
+			
+			p {
+				line-height: 1.6;
+				@include fontSize(12);
+			}
 		}
 		.servicesList {
 			text-align: left;
@@ -667,7 +687,7 @@ main {
 
 //Hover effects from hover.css
 //Animations from animate.css
-
+//Noun Project Icons by Mister Pixel, and Hans Paul Mösl Junior
 
 
 
