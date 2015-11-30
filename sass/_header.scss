@@ -59,7 +59,7 @@ header {
 		margin: 0;
 		text-align: center;
 		@include mobileLandscape {
-			padding: 5% 0;
+			padding: 2% 0 5%;
 		}
 	}
 	ul {
@@ -80,7 +80,7 @@ header {
 			@include fontSize(18);
 			margin: 10% 0;
 			@include mobileLandscape {
-				margin: 5% 0;
+				margin: 4% 0 0;
 			}
 		}
 		p:last-of-type {

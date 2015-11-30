@@ -54,6 +54,7 @@
 	      		<?php endif; ?>	      	
 	      	</div>
 	      </section>
+	      
       	<section class="homepageBlog">
       		<div>
       			<h5>Recent Posts</h5>

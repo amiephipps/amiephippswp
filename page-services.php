@@ -4,7 +4,7 @@
    <main class="services">
    	<div class="wrapper">
 			<div class="servicesHeader animated fadeIn">
-		      <h4>Web Development &amp; Design</h4>
+		      <h4>Services</h4>
 
 				<h5>I care about the quality of design and code I provide.</h5>
 				<h5>It isn't just about a design that looks good, you receive a fully responsive functional website that is based on your business objectives and gets results.</h5>

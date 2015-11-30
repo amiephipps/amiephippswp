@@ -1,23 +1,18 @@
 		<footer id="footer">
 			<div class="footerWrapper">
-
-				<p class="footerP">I love solving problems and taking on new challenges. If you would like to talk about a project you would like to bring to life, or just say hi, send me an email or fill in the information!</p>
-
 				<div class="contactOptions">
-					<div class="form">
-						<form action="//formspree.io/me@amiephipps.com" method="POST">
-						<input name="name" type="text" placeholder="Your Name" required>
-						<input name="_replyto" type="text" placeholder="Your Email" required>
-						<textarea id="textArea" placeholder="Your Message"></textarea>
-						<input name="submit" type="submit" value="Send">
-						<input type="hidden" name="_next" value="//amiephipps.com" />
-						<input type="hidden" name="_subject" value="Reply from Amie Phipps!" />
-						</form>
-					</div>
 
 					<div class="email">
-						<a href="mailto:me@amiephipps.com">me@amiephipps.com</a>
+						<h3>Get In Touch</h3>
+						<p>I love solving problems and taking on new challenges. If you are ready to work together to build your website, or would like to talk about a project (or even just say hi), send me an email, give me a call, or simply fill in the form!</p>
+						<p class="footerP"><i class="fa fa-phone"></i><a href="mailto:me@amiephipps.com">me@amiephipps.com</a></p>
+						<p class="footerP"><i class="fa fa-envelope-o"></i>416-819-2340</p>
 					</div>
+
+					<div class="form">
+						<?php echo do_shortcode( '[contact-form-7 id="97" title="contact form"]' ); ?>
+					</div>
+
 				</div> <!-- contactOptions -->
 			</div> <!-- WRAPPER -->
 				
