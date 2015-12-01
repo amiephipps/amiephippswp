@@ -623,71 +623,145 @@ main {
 // SERVICES PAGE **********************
 
 .services {
+	.process {
+		position: relative; //for the dashed line
+		h3 {
+			@include fontSize(18);
+			padding-bottom: 5%;
+		}
+		.dashedLine {
+			border-bottom: 1px dashed $purple;
+			width: 100%;
+			position: absolute;
+			top: 283px;
+		}
+		ul {
+			@extend .flexParent;
+			justify-content: center;
+			flex: 1;
+			height: 400px;
+			li {
+				max-width: 23%;
+				position: relative;
+				border-left: 1px solid $purple;
+				a {
+					color: $purple;
+					font-weight: 700;
+					&:hover {
+						color: darken($purple, 20%);
+					}
+				}
+				h6 {
+					@include fontSize(15);
+				}
+				p {
+					line-height: 1.5;
+					@include fontSize(13);
+				}
+				.fa {
+					background: $purple;
+					border: 2px solid $purple;
+					border-radius: 50px;
+					padding: 10%;
+					color: white;
+					position: absolute;
+					left: -17%;
+					transition: 1s ease;
+				}
+				.fa-paint-brush, .fa-cog {
+					top: -10%;
+				}
+				.fa-wrench, .fa-cloud-upload {
+					bottom: -6%;
+				}
+				.point {
+					height: 15px;
+					width: 15px;
+					border: 1px solid $purple;
+					background: $purple;
+					border-radius: 50px;
+					position: absolute;
+					left: -3.5%;
+					top: 177.5px;	
+				}
+				.processContent {
+					padding: 2% 8%;
+				}
+				.processPlaceHolder, .processContent {
+					height: 200px;
+				}
+				&:hover .fa {
+					color: $purple;
+					background: white;
+
+				}
+			}
+		}
+	}
 	.servicesHeader {
-		border-bottom: 3px solid $purple;
-		padding-bottom: 2%;
-		margin-bottom: 2%;
+		margin: 10% 0;
 		p {
-			width: 80%;
-			margin: 0 auto;
+			width: 90%;
 			text-align: center;
+			margin: 0 auto;
+		}
+		a {
+			color: $purple;
+			font-weight: 700;
+			&:hover {
+				color: darken($purple, 20%);
+			}
 		}
 	}
 	.servicesLists {
+		margin: 5% 0;
 		@extend .flexParent;
 		justify-content: space-between;
+		flex: 1;
 		@include mobileLandscape {
 			flex-direction: column;
 		}
 		.typeOfService {
-			width: 33%;
-
-				img {
-					display: block;
-					margin: 0 auto;
-					width: 70%;
-				}
-			
+			width: 31%;
+			border-left: 3px solid $purple;
+			padding-left: 3%;
+			h6 {
+				padding-top: 1%;
+			}
 			p {
 				line-height: 1.6;
-				@include fontSize(12);
+				@include fontSize(15);
 			}
-		}
-		.servicesList {
-			text-align: left;
-			width: 48%;
-			border: 3px solid $purple;
-			margin: 1% auto;
-			padding: 2% 3%;
 			@include mobileLandscape {
 				width: 100%;
-				margin: 5% auto;
-			}
-			h6 {
-				text-decoration: underline;
-				@include fontSize(19);
-			}
-			ul {
-				padding-left: 10%;
-				li {
-					@include fontSize(17);
-					list-style-type: square;
-					padding: 2%;
-				}
-			}
-		}
-		.servicesList:first-of-type {
-			margin-right: 2%;
-			@include mobileLandscape {
-				margin: 0;
+				padding: 8% 0;
+				border-left: none;
+				border-bottom: 3px solid $purple;
 			}
 		}
 	}	
+	.otherServicesList {
+		padding-bottom: 5%;
+		> p {
+			font-weight: 700;
+			margin: 0;
+		}
+		ul {
+			column-count: 2;
+			text-align: center;
+			p {
+				margin: 0;
+				line-height: 1.6;
+			}
+			i {
+				padding-right: 2%;
+			}
+		}
+	}
 }
 
 //Hover effects from hover.css
 //Animations from animate.css
-//Noun Project Icons by Mister Pixel, and Hans Paul Mösl Junior
 
 
 

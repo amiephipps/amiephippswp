@@ -58,6 +58,9 @@ header {
 	h2 {
 		margin: 0;
 		text-align: center;
+		@include medium {
+			@include fontSize(40);
+		}
 		@include mobileLandscape {
 			padding: 2% 0 5%;
 		}
@@ -70,6 +73,12 @@ header {
 			padding: 2% 0;
 			&:hover, &:focus {
 				color: $purple;
+			}
+			@include medium {
+				padding: 4% 0;
+			}
+			@include mobileLandscape {
+				padding: 2% 0;
 			}
 		}
 	}
