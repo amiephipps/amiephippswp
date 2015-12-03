@@ -29,7 +29,7 @@
 		        </a>
 		      </h4>
 				
-				<p><?php the_date(); ?> ■ <?php the_category(', '); ?></p>
+				<p>Written on <?php the_date(); ?> in <?php the_category(', '); ?></p>
 				
 				<section class="entry-content">
 					<?php the_excerpt(); ?>

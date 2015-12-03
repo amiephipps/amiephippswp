@@ -351,16 +351,16 @@ main {
 			width: 100%;
 			margin: 0 auto 5%;
 		}
-	}
-	a {
-		@include fontSize(18);
-		font-weight: 700;
-		display: inline-block;
-		padding: 2% 10%;
-		margin: 5% auto;
-		border: 3px solid black;
-		&:hover, &:focus {
-			background: $purple;
+		a {
+			@include fontSize(18);
+			font-weight: 700;
+			display: inline-block;
+			padding: 2% 10%;
+			margin: 5% auto;
+			border: 3px solid black;
+			&:hover, &:focus {
+				background: $purple;
+			}
 		}
 	}
 }
@@ -384,27 +384,27 @@ main {
 		@include mobile {
 			flex-direction: column;
 		}
-	}
-	h5 {
-		@include fontSize(25);
-		border-bottom: 1px solid black;
-		width: 80%;
-	}
-	h6 {
-		margin-bottom: 0.5%;
-	}
-	ul {
-		list-style-type: square;
-		padding-left: 2%;
-	}
-	li {
-		@include fontSize(15);
-	}
-	li:last-of-type {
-		padding-bottom: 5%;
-	}
-	p {
-		margin: 0;
+		h5 {
+			@include fontSize(25);
+			border-bottom: 1px solid black;
+			width: 80%;
+		}
+		h6 {
+			margin-bottom: 0.5%;
+		}
+		ul {
+			list-style-type: square;
+			padding-left: 2%;
+		}
+		li {
+			@include fontSize(15);
+		}
+		li:last-of-type {
+			padding-bottom: 5%;
+		}
+		p {
+			margin: 0;
+		}
 	}
 	.skills {
 		width: 25%;
@@ -624,7 +624,31 @@ main {
 
 .services {
 	.process {
+		// margin: 0 auto;
+		height: 500px;
+		width: 1000px; 
 		position: relative; //for the dashed line
+		@include large {
+			height: 575px;
+			width: 675px;
+		}
+		@include medium {
+			height: 685px;
+			width: 520px;
+			h3 {
+				margin-bottom: 5%;
+			}
+		}
+		@include mobileLandscape {
+			width: 100%;
+			height: auto;
+		}
+		@include mobile {
+			h3 {
+				margin-bottom: 25%;
+				margin-top: 10%;
+			}
+		}
 		h3 {
 			@include fontSize(18);
 			padding-bottom: 5%;
@@ -633,17 +657,41 @@ main {
 			border-bottom: 1px dashed $purple;
 			width: 100%;
 			position: absolute;
-			top: 283px;
+			top: 285.5px;
+			@include large {
+				top: 299px;
+			}
+			@include medium {
+				top: 388px;
+			}
+			@include mobileLandscape {
+				top: 6%;
+				left: 50%;
+				height: 900px;
+				width: 10px;
+				border-left: 1px dashed $purple;
+				border-bottom: none;
+			}
+			@include mobile {
+				top: 5%;
+				height: 1250px;
+			}
 		}
 		ul {
 			@extend .flexParent;
 			justify-content: center;
 			flex: 1;
-			height: 400px;
 			li {
 				max-width: 23%;
 				position: relative;
 				border-left: 1px solid $purple;
+				@include mobileLandscape {
+					max-width: 100%;
+					border-left: none;
+					border-top: 1px solid $purple;
+					@extend .flexParent;
+					justify-content: space-betweenl
+				}
 				a {
 					color: $purple;
 					font-weight: 700;
@@ -667,12 +715,43 @@ main {
 					position: absolute;
 					left: -17%;
 					transition: 1s ease;
+					@include large {
+						left: -21%;
+					}
+					@include medium {
+						left: -25%;
+					}
+					@include mobileLandscape {
+						left: -3%;
+						padding: 3%;
+					}
+					@include mobile {
+						padding: 4.5%;
+					}
 				}
 				.fa-paint-brush, .fa-cog {
 					top: -10%;
+					@include medium {
+						top: -5%;
+					}
+					@include mobileLandscape {
+						top: -12%;
+					}
+					@include mobile {
+						top: -9%;
+						left: 0;
+					}
 				}
 				.fa-wrench, .fa-cloud-upload {
 					bottom: -6%;
+					@include mobileLandscape {
+						bottom: 88%;
+						left: 88%;
+					}
+					@include mobile {
+						bottom: 90%;
+						left: 79.5%;
+					}
 				}
 				.point {
 					height: 15px;
@@ -682,13 +761,47 @@ main {
 					border-radius: 50px;
 					position: absolute;
 					left: -3.5%;
-					top: 177.5px;	
+					top: 177.5px;
+					@include large {
+						left: -5%;
+						top: 217px;
+					}	
+					@include medium {
+						left: -7.5%;
+						top: 308px;
+					}
+					@include mobileLandscape {
+						top: -3.5%;
+						left: 48.1%;
+					}
+					@include mobile {
+						top: -2.6%;
+						left: 47.5%;
+					}
 				}
 				.processContent {
 					padding: 2% 8%;
 				}
 				.processPlaceHolder, .processContent {
 					height: 200px;
+					@include large {
+						height: 230px;
+					}
+					@include medium {
+						height: 285px;
+						padding-top: 35%;
+					}
+					@include mobileLandscape {
+						padding: 3%;
+						margin-bottom: 6%;
+						height: 200px;
+						width: 50%;
+					}
+					@include mobile {
+						padding: 4%;
+						margin-bottom: 40%;
+						height: 250px;
+					}
 				}
 				&:hover .fa {
 					color: $purple;
@@ -699,7 +812,7 @@ main {
 		}
 	}
 	.servicesHeader {
-		margin: 10% 0;
+		padding-top: 8%;
 		p {
 			width: 90%;
 			text-align: center;
@@ -714,13 +827,10 @@ main {
 		}
 	}
 	.servicesLists {
-		margin: 5% 0;
+		margin: 8% 0;
 		@extend .flexParent;
 		justify-content: space-between;
 		flex: 1;
-		@include mobileLandscape {
-			flex-direction: column;
-		}
 		.typeOfService {
 			width: 31%;
 			border-left: 3px solid $purple;
@@ -739,9 +849,18 @@ main {
 				border-bottom: 3px solid $purple;
 			}
 		}
+		@include medium {
+			margin: 10% 0;
+		}
+		@include mobileLandscape {
+			flex-direction: column;
+		}
+		@include mobile {
+			margin: 10% 4%;
+		}
 	}	
 	.otherServicesList {
-		padding-bottom: 5%;
+		padding-bottom: 1%;
 		> p {
 			font-weight: 700;
 			margin: 0;
@@ -756,6 +875,9 @@ main {
 			i {
 				padding-right: 2%;
 			}
+		}
+		@include mobile {
+			padding-bottom: 15%;
 		}
 	}
 }

@@ -8,8 +8,12 @@
 		width: 50%;
 		flex: 1;
 	}
-	.blogImage {
-		height: auto;
+	// .blogImage {
+	// 	// height: 50%;
+	// }
+	.wp-post-image {
+		max-width: 100%;
+		height: 100%;
 	}
 	.blogContent {
 		padding-left: 2%;
@@ -79,6 +83,13 @@
 			display: block;
 			margin: 0 auto;
 			width: 80%;
+		}
+		> ol {
+			@include fontSize(15);
+			line-height: 1.5;
+			li {
+				padding: 1% 0;
+			}
 		}
 	}
 }

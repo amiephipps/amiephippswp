@@ -22,7 +22,7 @@
 	   			<li>
 	   				<div class="processContent">
 	   					<h6>Discussion.</h6>
-	   					<p>I will send you a proposal/estimate. Once approved, you'll receive a contract. Discussions are held throughout this time to ensure we are always on the same page.</p>
+	   					<p>I will send you a proposal / estimate. Once approved, you'll receive a contract. Discussions are held throughout this time to ensure we are always on the same page.</p>
 	   				</div>
 	   				<div class="point"></div>
 	   				<div class="processPlaceHolder"></div>
