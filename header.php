@@ -8,6 +8,8 @@
    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Josefin+Sans:600,700' rel='stylesheet' type='text/css'>
+   <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"
+    rel="stylesheet" />
    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
    <?php // Load our CSS ?>
    <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />

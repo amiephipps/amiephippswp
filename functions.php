@@ -88,6 +88,14 @@ function hackeryou_scripts() {
   	null, //version number
   	true
   );
+
+  wp_enqueue_script(
+  	'jquery UI',
+  	"http://code.jquery.com/ui/1.11.4/jquery-ui.js",
+  	array( 'jquery' ),  //dependencies
+  	null, //version number
+  	true //load in footer
+  );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts' );

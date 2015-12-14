@@ -14,7 +14,7 @@
 		      <div class="aboutContent animated fadeIn">
 		         <p><?php the_content(); ?></p>
 
-		    	 <?php endwhile; // end the loop?>
+		    	<?php endwhile; // end the loop?>
 
 		   	   <a href="index.php?page_id=57">See My Resume</a>
 		      </div>

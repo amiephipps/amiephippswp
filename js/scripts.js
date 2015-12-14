@@ -28,4 +28,16 @@ $(function(){
 		 }
 		}
 	});
+
+//ACCORDION STUFF *******************
+
+	var icons = {
+	  header: "ui-icon-circle-arrow-e",
+	  activeHeader: "ui-icon-circle-arrow-s"
+	};
+
+	$('#faq').accordion({
+		icons: icons,
+		heightStyle: "content"
+	});
 });
