@@ -7,16 +7,19 @@ footer#footer {
 	text-align: center;
 	@include large {
 		width: 100%;
-		position: static;
+		position: relative;
+		height: auto;
+		padding-bottom: 10%;
 	}
 	img {
 		width: 10%;
 		position: absolute;
-		bottom: 8px;
+		bottom: 0px;
 		left: 0;
 		@include mobileLandscape {
 			width: 20%;
 			left: 15px;
+			bottom: 0px;
 		}
 		@include mobile {
 			width: 30%;

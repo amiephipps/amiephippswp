@@ -12,7 +12,7 @@
 	   		<ul>
 	   			<li>
 	   				<i class="fa fa-paint-brush fa-3x"></i>
-	   				<div class="processPlaceHolder"></div>
+	   				<div class="processPlaceHolder">&nbsp;</div>
 	   				<div class="point"></div>
 	   				<div class="processContent">
 	   					<h6>Inquiry.</h6>
@@ -25,12 +25,12 @@
 	   					<p>I will send you a proposal / estimate. Once approved, you'll receive a contract. Discussions are held throughout this time to ensure we are always on the same page.</p>
 	   				</div>
 	   				<div class="point"></div>
-	   				<div class="processPlaceHolder"></div>
+	   				<div class="processPlaceHolder">&nbsp;</div>
 	   				<i class="fa fa-wrench fa-3x"></i>
 	   			</li>
 	   			<li>
 	   				<i class="fa fa-cog fa-3x"></i>
-	   				<div class="processPlaceHolder"></div>
+	   				<div class="processPlaceHolder">&nbsp;</div>
 	   				<div class="point"></div>
 	   				<div class="processContent">
 	   					<h6>Design &amp; Develop.</h6>
@@ -43,7 +43,7 @@
 	   					<p>When the website is completed, I will provide you with a link so you can review and test it. I will implement any changes, and we will oficially deploy.</p>
 	   				</div>
 	   				<div class="point"></div>
-	   				<div class="processPlaceHolder"></div>
+	   				<div class="processPlaceHolder">&nbsp;</div>
 	   				<i class="fa fa-cloud-upload fa-3x"></i>
 	   			</li>
 	   		</ul>

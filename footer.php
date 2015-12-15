@@ -5,8 +5,8 @@
 					<div class="email">
 						<h3>Get In Touch</h3>
 						<p>I love solving problems and taking on new challenges. If you are ready to work together to build your website, or would like to talk about a project (or even just say hi), send me an email, give me a call, or simply fill in the form!</p>
-						<p class="footerP"><i class="fa fa-phone"></i><a href="mailto:me@amiephipps.com">me@amiephipps.com</a></p>
-						<p class="footerP"><i class="fa fa-envelope-o"></i>416-819-2340</p>
+						<p class="footerP"><i class="fa fa-envelope-o"></i><a href="mailto:me@amiephipps.com">me@amiephipps.com</a></p>
+						<p class="footerP"><i class="fa fa-phone"></i>416-819-2340</p>
 					</div>
 
 					<div class="form">
@@ -19,7 +19,7 @@
 			<img src="<?php bloginfo('template_url') ?>/images/doglogo.svg" alt="logo - geodesic dog">
 		</footer>
 
-		<div id="contact"></div>
+		<div id="contact">&nbsp;</div>
 	</div> <!-- rightSide -->
 </div> <!-- main Flexer -->
 

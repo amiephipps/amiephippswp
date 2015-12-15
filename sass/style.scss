@@ -30,7 +30,7 @@ img {
 
 .wrapper {
 	padding: 3% 5% 5% 3%;
-	height: 100%;
+	// height: 100%;
 	position: relative;
 	z-index: 1;
 	background: white;
@@ -71,6 +71,14 @@ img {
   right: 0;
 }
 
+body {
+	height: 100%; //for FireFox with footer
+	padding-bottom: 80%; //for FireFox with footer
+	@include large {
+		padding-bottom: 0;
+		height: auto;
+	}
+}
 // MAIN PAGE FLEXING**********************
 body > .flexParent {
 	position: relative; //for position fixed on the left size div
@@ -107,7 +115,7 @@ body > .flexParent {
 main {
 	width: 100%;
 	position: relative;
-	margin-bottom: 80%;
+	// margin-bottom: 80%;
 	@include large {
 		margin-bottom: 0;
 	}
@@ -624,7 +632,6 @@ main {
 
 .services {
 	.process {
-		// margin: 0 auto;
 		height: 500px;
 		width: 1000px; 
 		position: relative; //for the dashed line
@@ -652,6 +659,9 @@ main {
 		h3 {
 			@include fontSize(18);
 			padding-bottom: 5%;
+			@include large {
+				padding-bottom: 5%;
+			}
 		}
 		.dashedLine {
 			border-bottom: 1px dashed $purple;
@@ -673,14 +683,17 @@ main {
 				border-bottom: none;
 			}
 			@include mobile {
-				top: 5%;
 				height: 1250px;
 			}
 		}
 		ul {
 			@extend .flexParent;
+			display: -webkit-box !important; 
 			justify-content: center;
 			flex: 1;
+			@include mobileLandscape {
+				display: flex !important;
+			}
 			li {
 				max-width: 23%;
 				position: relative;
@@ -788,8 +801,8 @@ main {
 						height: 230px;
 					}
 					@include medium {
-						height: 285px;
-						padding-top: 35%;
+						height: 320px;
+						padding-top: 5%;
 					}
 					@include mobileLandscape {
 						padding: 3%;
@@ -800,7 +813,7 @@ main {
 					@include mobile {
 						padding: 4%;
 						margin-bottom: 40%;
-						height: 250px;
+						height: 200px;
 					}
 				}
 				&:hover .fa {
@@ -824,6 +837,12 @@ main {
 			&:hover {
 				color: darken($purple, 20%);
 			}
+		}
+		@include medium {
+			padding-top: 20%;
+		}
+		@include mobileLandscape {
+			padding-top: 10%;
 		}
 	}
 	.servicesLists {
@@ -876,7 +895,7 @@ main {
 				padding-right: 2%;
 			}
 		}
-		@include mobile {
+		@include mobileLandscape {
 			padding-bottom: 15%;
 		}
 	}
