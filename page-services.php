@@ -40,7 +40,7 @@
 	   			<li>
 	   				<div class="processContent">
 	   					<h6>Review &amp; Deploy.</h6>
-	   					<p>When the website is completed, I will provide you with a link so you can review and test it. I will implement any changes, and we will oficially deploy.</p>
+	   					<p>When the website is completed, I will provide you with a link so you can review and test it. I will implement any changes, and we will officially deploy.</p>
 	   				</div>
 	   				<div class="point"></div>
 	   				<div class="processPlaceHolder">&nbsp;</div>
@@ -50,14 +50,14 @@
 	   	</section>
 
 			<section class="servicesHeader animated fadeIn">
-				<p>I can help you with every stage of your digital project. Everything I creat is done so with the business objectives of your project in mind. Before any code is written, we start out with a plan. <a href="#contact" class="smoothScroll">Contact me</a> today to get started on your plan.</p>
+				<p>I can help you with every stage of your digital project. Everything I create is done so with the business objectives of your project in mind. Before any code is written, we start out with a plan. <a href="#contact" class="smoothScroll">Contact me</a> today to get started on your plan.</p>
 			</section> <!-- servicesHeader -->
 			
 			<section class="servicesLists animated fadeIn">
 				<div class="typeOfService">
 					<i class="fa fa-desktop fa-5x"></i>
 					<h6>Design.</h6>
-					<p>Not sure what you want your site to look like? Don't panic! Let me help you discover the story your website will tell. We work together to get a unique and create design that works for you and your business.</p>
+					<p>Not sure what you want your site to look like? Don't panic! Let me help you discover the story your website will tell. We work together to get a unique and creative design that works for you and your business.</p>
 				</div>
 				<div class="typeOfService">
 					<i class="fa fa-code fa-5x"></i>

@@ -27,7 +27,7 @@ $mint: black;
 
 @mixin fontSize($fontSize) {
 	font-size: $fontSize * 1px;
-	font-size: ($fontSize / 10) *1rem;
+	font-size: ($fontSize / 10) * 1rem;
 }
 
 @mixin large {

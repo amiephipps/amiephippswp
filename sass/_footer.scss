@@ -45,73 +45,76 @@ footer#footer {
 
 .contactOptions {
 	@extend .flexParent;
-	justify-content: space-between;
-	@include large {
-		flex-direction: column !important;
+	justify-content: center;
+	h1 {
+		border: 2px solid black;
 	}
-	.email {
-		width: 48%;
-		@include large {
-			width: 100%;
-		}
-		@include mobileLandscape {
-			padding-bottom: 3%;
-		}
-		i {
-			padding: 0 2% 0 0;
-		}
-		a {
-			text-decoration: underline;
-		}
-	}
-	.form {
-		width: 48%;
-		@include large {
-			width: 100%;
-			margin-bottom: 0 auto;
-		}
-	}
-	form {
-		@include fontSize(13);
-		input, textarea {
-			width: 85%;
-			border: 1px solid $mint;
-			border-radius: 2px;
-			padding: 2%;
-			resize: none;
-			background: transparent;
-			&:focus {
-				outline: none;
-			}
-			@include large {
-				width: 80%;
-			}
-			@include mobileLandscape {
-				width: 100%;
-			}
-		}
-		textarea {
-			height: 140px;
-		}
-		input[type=submit] {
-			color: black;
-			font-weight: 700;
-			border: 2.5px solid $mint;
-			transition: .4s all ease;
-			&:hover, &:focus {
-				background: darken($purple, 20%);
-			}
-		}
-		> div:last-of-type {
-			border: none;
-			margin: 0;
-			padding: 0;
-			width: 80%;
-		}
-		::-webkit-input-placeholder {
-		   color: black;
-		}
-	}
+	// @include large {
+	// 	flex-direction: column !important;
+	// }
+	// .email {
+	// 	width: 48%;
+	// 	@include large {
+	// 		width: 100%;
+	// 	}
+	// 	@include mobileLandscape {
+	// 		padding-bottom: 3%;
+	// 	}
+	// 	i {
+	// 		padding: 0 2% 0 0;
+	// 	}
+	// 	a {
+	// 		text-decoration: underline;
+	// 	}
+	// }
+	// .form {
+	// 	width: 48%;
+	// 	@include large {
+	// 		width: 100%;
+	// 		margin-bottom: 0 auto;
+	// 	}
+	// }
+	// form {
+	// 	@include fontSize(13);
+	// 	input, textarea {
+	// 		width: 85%;
+	// 		border: 1px solid $mint;
+	// 		border-radius: 2px;
+	// 		padding: 2%;
+	// 		resize: none;
+	// 		background: transparent;
+	// 		&:focus {
+	// 			outline: none;
+	// 		}
+	// 		@include large {
+	// 			width: 80%;
+	// 		}
+	// 		@include mobileLandscape {
+	// 			width: 100%;
+	// 		}
+	// 	}
+	// 	textarea {
+	// 		height: 140px;
+	// 	}
+	// 	input[type=submit] {
+	// 		color: black;
+	// 		font-weight: 700;
+	// 		border: 2.5px solid $mint;
+	// 		transition: .4s all ease;
+	// 		&:hover, &:focus {
+	// 			background: darken($purple, 20%);
+	// 		}
+	// 	}
+	// 	> div:last-of-type {
+	// 		border: none;
+	// 		margin: 0;
+	// 		padding: 0;
+	// 		width: 80%;
+	// 	}
+	// 	::-webkit-input-placeholder {
+	// 	   color: black;
+	// 	}
+	// }
 }
 
 
