@@ -14,8 +14,11 @@ footer#footer {
 	img {
 		width: 10%;
 		position: absolute;
-		bottom: 0px;
+		bottom: 6px;
 		left: 0;
+		@include large {
+			bottom: 0;
+		}
 		@include mobileLandscape {
 			width: 20%;
 			left: 15px;
@@ -28,9 +31,6 @@ footer#footer {
 }
 .footerWrapper {
 	margin-bottom: 5%;
-	margin-left: 9%;
-	text-align: left;
-	padding: 3% 4% 0% 3%;
 	@include large {
 		margin-bottom: 11%;
 	}
@@ -46,75 +46,23 @@ footer#footer {
 .contactOptions {
 	@extend .flexParent;
 	justify-content: center;
-	h1 {
-		border: 2px solid black;
+	align-items: center;
+	height: 500px;
+	h2 {
+		border: 5px solid black;
+		padding: 1rem;
+		font-family: 'Droid Sans', sans-serif;
+		font-weight: normal;
+		align-self: center;
+		transition: all 1s;
+		&:hover {
+			background: lighten($purple, 10%);
+		}
+		@include large {
+			@include fontSize(35);
+			height: auto;
+		}
 	}
-	// @include large {
-	// 	flex-direction: column !important;
-	// }
-	// .email {
-	// 	width: 48%;
-	// 	@include large {
-	// 		width: 100%;
-	// 	}
-	// 	@include mobileLandscape {
-	// 		padding-bottom: 3%;
-	// 	}
-	// 	i {
-	// 		padding: 0 2% 0 0;
-	// 	}
-	// 	a {
-	// 		text-decoration: underline;
-	// 	}
-	// }
-	// .form {
-	// 	width: 48%;
-	// 	@include large {
-	// 		width: 100%;
-	// 		margin-bottom: 0 auto;
-	// 	}
-	// }
-	// form {
-	// 	@include fontSize(13);
-	// 	input, textarea {
-	// 		width: 85%;
-	// 		border: 1px solid $mint;
-	// 		border-radius: 2px;
-	// 		padding: 2%;
-	// 		resize: none;
-	// 		background: transparent;
-	// 		&:focus {
-	// 			outline: none;
-	// 		}
-	// 		@include large {
-	// 			width: 80%;
-	// 		}
-	// 		@include mobileLandscape {
-	// 			width: 100%;
-	// 		}
-	// 	}
-	// 	textarea {
-	// 		height: 140px;
-	// 	}
-	// 	input[type=submit] {
-	// 		color: black;
-	// 		font-weight: 700;
-	// 		border: 2.5px solid $mint;
-	// 		transition: .4s all ease;
-	// 		&:hover, &:focus {
-	// 			background: darken($purple, 20%);
-	// 		}
-	// 	}
-	// 	> div:last-of-type {
-	// 		border: none;
-	// 		margin: 0;
-	// 		padding: 0;
-	// 		width: 80%;
-	// 	}
-	// 	::-webkit-input-placeholder {
-	// 	   color: black;
-	// 	}
-	// }
 }
 
 

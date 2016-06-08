@@ -24,7 +24,6 @@
                            <div class="portfolioContent">
                               <p><?php the_field('description'); ?></p>
                               <a href="<?php the_field('live_link'); ?>" target="_blank">View Live Site</a>
-                              <a href="<?php the_permalink(); ?>">Read More...</a>
                            </div> <!-- portfolio content -->
                         </div> <!-- portfolio image -->
                         <h5><?php the_title(); ?></h5>

@@ -55,37 +55,7 @@
 	      	</div>
 	      </section>
 	      
-      	<section class="homepageBlog">
-      		<div>
-      			<h5>Recent Posts</h5>
-      			<p>Here you can find some of my latest posts...</p>
-      			<a href="http://www.amiephipps.com/blog">See all posts...</a>
-      		</div>
-      		<div>
-					<?php
-					 	global $post;
-					 	$myposts = get_posts('numberposts=3');
-						foreach($myposts as $post) :
-					 ?>
-
-   					<article class="homepageEntry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-   						<section class="blogImage animated fadeIn">
-   							<a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-   								<?php the_post_thumbnail('portfolio'); ?>
-   							</a>
-   						</section>
-
-   						<section class="blogContent animated fadeIn">
-					        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-					          <?php the_title(); ?>...
-					        </a>
-   						</section> <!-- blogContent -->
-   					</article><!-- #post-## -->
-
-					 <?php endforeach; ?>
-      		</div>
-      	</section>
-
+      	
 		</div> <!-- WRAPPER -->
  		<?php get_footer(); ?>
    </main> 
